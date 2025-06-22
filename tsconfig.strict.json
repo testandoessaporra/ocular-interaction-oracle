@@ -1,0 +1,23 @@
+
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true
+  },
+  "include": [
+    // Arquivos que já estão prontos para modo strict
+    "src/utils/logger.ts",
+    "src/utils/bundleAnalyzer.ts",
+    "src/hooks/usePerformanceTracker.ts",
+    "src/constants/optimizationConfig.ts",
+    "src/constants/gameConfig.ts"
+  ]
+}

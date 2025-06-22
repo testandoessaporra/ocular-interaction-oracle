@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug FPS</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #0f0;
+        }
+        #fps {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+        .info {
+            background: #000;
+            padding: 10px;
+            border: 1px solid #0f0;
+            margin: 10px 0;
+        }
+        button {
+            background: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0a0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎮 Debug FPS Monitor</h1>
+    
+    <div id="fps">FPS: --</div>
+    
+    <div class="info">
+        <div id="average">Média: --</div>
+        <div id="min">Mínimo: --</div>
+        <div id="max">Máximo: --</div>
+        <div id="samples">Amostras: 0</div>
+    </div>
+    
+    <button onclick="startHeavyAnimation()">Testar Animação Pesada</button>
+    <button onclick="stopHeavyAnimation()">Parar Animação</button>
+    <button onclick="window.location.href='/'">Voltar ao App</button>
+    
+    <div class="info" id="log"></div>
+    
+    <script>
+        let fps = 0;
+        let frameCount = 0;
+        let lastTime = performance.now();
+        let fpsHistory = [];
+        let animationId = null;
+        let heavyAnimationId = null;
+        
+        function measureFPS() {
+            frameCount++;
+            const currentTime = performance.now();
+            const deltaTime = currentTime - lastTime;
+            
+            if (deltaTime >= 1000) {
+                fps = Math.round((frameCount * 1000) / deltaTime);
+                fpsHistory.push(fps);
+                
+                if (fpsHistory.length > 60) {
+                    fpsHistory.shift();
+                }
+                
+                updateDisplay();
+                
+                frameCount = 0;
+                lastTime = currentTime;
+            }
+            
+            animationId = requestAnimationFrame(measureFPS);
+        }
+        
+        function updateDisplay() {
+            document.getElementById('fps').textContent = `FPS: ${fps}`;
+            
+            if (fpsHistory.length > 0) {
+                const avg = Math.round(fpsHistory.reduce((a, b) => a + b, 0) / fpsHistory.length);
+                const min = Math.min(...fpsHistory);
+                const max = Math.max(...fpsHistory);
+                
+                document.getElementById('average').textContent = `Média: ${avg}`;
+                document.getElementById('min').textContent = `Mínimo: ${min}`;
+                document.getElementById('max').textContent = `Máximo: ${max}`;
+                document.getElementById('samples').textContent = `Amostras: ${fpsHistory.length}`;
+                
+                // Log se FPS cair muito
+                if (fps < 30) {
+                    addLog(`⚠️ FPS BAIXO: ${fps}`);
+                }
+            }
+        }
+        
+        function addLog(msg) {
+            const log = document.getElementById('log');
+            log.innerHTML = `${new Date().toLocaleTimeString()}: ${msg}<br>` + log.innerHTML;
+            if (log.children.length > 10) {
+                log.innerHTML = log.innerHTML.split('<br>').slice(0, 10).join('<br>');
+            }
+        }
+        
+        function startHeavyAnimation() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 800;
+            canvas.height = 600;
+            canvas.style.position = 'fixed';
+            canvas.style.bottom = '10px';
+            canvas.style.right = '10px';
+            canvas.style.border = '2px solid #0f0';
+            document.body.appendChild(canvas);
+            
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            
+            // Criar 1000 partículas
+            for (let i = 0; i < 1000; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    size: Math.random() * 3 + 1
+                });
+            }
+            
+            function animate() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#0f0';
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                    
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                
+                heavyAnimationId = requestAnimationFrame(animate);
+            }
+            
+            animate();
+            addLog('🎮 Animação pesada iniciada (1000 partículas)');
+        }
+        
+        function stopHeavyAnimation() {
+            if (heavyAnimationId) {
+                cancelAnimationFrame(heavyAnimationId);
+                const canvas = document.querySelector('canvas');
+                if (canvas) canvas.remove();
+                addLog('✅ Animação parada');
+            }
+        }
+        
+        // Iniciar medição
+        measureFPS();
+        addLog('🚀 Monitor FPS iniciado');
+        
+        // Verificar se o app tem o monitor
+        if (window.performanceMonitor) {
+            addLog('✅ performanceMonitor detectado no app');
+            setInterval(() => {
+                const appFPS = window.performanceMonitor.getCurrentFPS();
+                if (appFPS !== fps) {
+                    addLog(`📊 App reporta FPS: ${appFPS}, Real: ${fps}`);
+                }
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

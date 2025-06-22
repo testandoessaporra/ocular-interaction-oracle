@@ -1,0 +1,99 @@
+
+/* ===== TACTICAL EFFECTS ===== */
+
+/* TEXTURAS TÁTICAS SUTIS */
+.carbon-fiber {
+  background-image: 
+    linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.1) 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+}
+
+.hexagonal-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.brushed-metal {
+  background: linear-gradient(90deg, 
+    rgba(255, 215, 0, 0.1) 0%, 
+    rgba(255, 215, 0, 0.05) 50%, 
+    rgba(255, 215, 0, 0.1) 100%);
+}
+
+/* GRADIENTES TÁTICOS */
+.tactical-gradient-dark {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.tactical-gradient-gold {
+  background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+}
+
+.tactical-gradient-card {
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 26, 0.95) 0%, 
+    rgba(0, 0, 0, 0.98) 100%);
+}
+
+/* SOMBRAS TÁTICAS */
+.tactical-shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tactical-shadow-md {
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tactical-shadow-lg {
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.8),
+    0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.tactical-shadow-gold {
+  box-shadow: 
+    0 4px 16px rgba(255, 215, 0, 0.2),
+    0 2px 8px rgba(255, 215, 0, 0.1);
+}
+
+/* GLOW EFFECTS */
+.tactical-glow-gold {
+  box-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.5),
+    0 0 20px rgba(255, 215, 0, 0.3),
+    0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+.tactical-glow-warning {
+  box-shadow: 
+    0 0 10px rgba(255, 193, 7, 0.5),
+    0 0 20px rgba(255, 193, 7, 0.3);
+}
+
+.tactical-glow-success {
+  box-shadow: 
+    0 0 10px rgba(46, 125, 50, 0.5),
+    0 0 20px rgba(46, 125, 50, 0.3);
+}
+
+/* SEPARADORES TÁTICOS */
+.tactical-separator {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 215, 0, 0.3) 50%, 
+    transparent 100%);
+}
+
+/* MODAL BACKDROP TÁTICO */
+.tactical-modal-backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+}

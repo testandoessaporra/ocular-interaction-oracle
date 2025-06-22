@@ -1,0 +1,9 @@
+
+/* ===== TACTICAL ENHANCEMENTS ===== */
+/* Paleta Tática Unificada: Preto/Cinza/Dourado */
+
+@import './tactical/scrollbars.css';
+@import './tactical/interactions.css';
+@import './tactical/effects.css';
+@import './tactical/components.css';
+@import './tactical/animations.css';

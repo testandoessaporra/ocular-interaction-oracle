@@ -1,0 +1,40 @@
+
+/* ===== TACTICAL INTERACTIONS ===== */
+
+/* ESTADOS INTERATIVOS UNIFICADOS */
+.tactical-hover {
+  background-color: #2a2a2a;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.tactical-hover:hover {
+  background-color: #2a2a2a;
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.tactical-active {
+  background-color: #333333;
+  border-left: 3px solid #FFD700;
+  color: #FFD700;
+}
+
+.tactical-disabled {
+  background-color: #666666;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* BORDAS TÁTICAS */
+.tactical-border-gold {
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.tactical-border-gold-active {
+  border: 1px solid rgba(255, 215, 0, 0.8);
+}
+
+.tactical-border-subtle {
+  border: 1px solid rgba(102, 102, 102, 0.3);
+}

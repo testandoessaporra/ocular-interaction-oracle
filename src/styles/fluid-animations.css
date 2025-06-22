@@ -1,0 +1,131 @@
+
+@layer utilities {
+  /* === ONLY ESSENTIAL ANIMATIONS - FRAMER MOTION HANDLES PAGE TRANSITIONS === */
+  
+  /* Enhanced Micro-interactions */
+  .hover-lift {
+    transition: all 0.2s ease-out;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .hover-lift:hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-press {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .button-press:active {
+    transform: translate3d(0, 1px, 0);
+  }
+  
+  /* Enhanced Study Block Interactions */
+  .block-hover {
+    transition: all 0.2s ease-out;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .block-hover:hover {
+    transform: translate3d(0, -1px, 0);
+    box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.2);
+  }
+  
+  /* Progress Bar Animation */
+  .progress-fill {
+    transition: width 0.8s ease-out;
+    will-change: width;
+  }
+  
+  /* Scan Animation for Progress Bar - Melhorada */
+  .animate-scan {
+    animation: scan 2s linear infinite;
+  }
+  
+  /* Icon Bounce Animation */
+  .icon-bounce {
+    transition: transform 0.2s ease-out;
+    transform: translateZ(0);
+  }
+  
+  .icon-bounce:hover {
+    transform: rotate(5deg);
+  }
+  
+  /* Toast Enhanced */
+  .toast-enter {
+    animation: toastSlideIn 0.3s ease-out forwards;
+    transform: translateZ(0);
+  }
+  
+  /* Success State Enhanced */
+  .success-glow {
+    animation: successGlow 0.4s ease-out forwards;
+    transform: translateZ(0);
+  }
+  
+  /* === ESSENTIAL KEYFRAMES ONLY === */
+  
+  @keyframes scan {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes toastSlideIn {
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes successGlow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+    }
+  }
+  
+  /* === GPU ACCELERATION UTILITIES === */
+  .gpu-accelerate {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  
+  /* === REDUCED MOTION SUPPORT === */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

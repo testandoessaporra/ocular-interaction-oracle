@@ -1,0 +1,164 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lovable App</title>
+    <!-- Tactical Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f0f23" />
+    
+    <!-- SISTEMA DE SIMULAÇÃO TEMPORAL SIMPLIFICADO -->
+    <script>
+      console.log('🚀 ===== INICIALIZANDO testSimulation LIMPO =====');
+      
+      // Função para obter dados do localStorage (somente leitura)
+      const getSimulatedDateData = () => {
+        const simulatedDate = localStorage.getItem('simulatedDate');
+        const simulatedStreak = localStorage.getItem('simulatedStreak');
+        const isSimulating = !!simulatedDate;
+        
+        const getCurrentDateString = () => {
+          return simulatedDate ? new Date(simulatedDate).toDateString() : new Date().toDateString();
+        };
+
+        return {
+          getCurrentDateString,
+          simulatedStreak: simulatedStreak ? parseInt(simulatedStreak) : 0,
+          isSimulating,
+          simulatedDate
+        };
+      };
+
+      // Definir testSimulation globalmente - APENAS EVENTOS
+      window.testSimulation = {
+        advanceDay: () => {
+          console.log('🎮 Disparando evento ADVANCE_DAY para o React');
+          window.dispatchEvent(new CustomEvent('simulation-event', { 
+            detail: { type: 'ADVANCE_DAY' } 
+          }));
+        },
+        
+        goBackDay: () => {
+          console.log('🎮 Disparando evento GO_BACK_DAY para o React');
+          window.dispatchEvent(new CustomEvent('simulation-event', { 
+            detail: { type: 'GO_BACK_DAY' } 
+          }));
+        },
+        
+        skipDay: () => {
+          console.log('🎮 Disparando evento SKIP_DAY para o React');
+          window.dispatchEvent(new CustomEvent('simulation-event', { 
+            detail: { type: 'SKIP_DAY' } 
+          }));
+        },
+        
+        reset: () => {
+          console.log('🎮 Disparando evento RESET_SIMULATION para o React');
+          window.dispatchEvent(new CustomEvent('simulation-event', { 
+            detail: { type: 'RESET_SIMULATION' } 
+          }));
+        },
+        
+        addShields: (amount = 1) => {
+          console.log(`🛡️ Disparando evento ADD_SHIELDS (${amount}) para o React`);
+          window.dispatchEvent(new CustomEvent('simulation-event', { 
+            detail: { type: 'ADD_SHIELDS', payload: { amount } } 
+          }));
+        },
+        
+        status: () => {
+          console.log('🎮 ===== STATUS DA SIMULAÇÃO (SOMENTE LEITURA) =====');
+          
+          const { getCurrentDateString, simulatedStreak, isSimulating } = getSimulatedDateData();
+          
+          const storedProgress = localStorage.getItem('userProgress');
+          const progress = storedProgress ? JSON.parse(storedProgress) : null;
+          const shields = progress?.streakProtectionShields || 0;
+          const realLoginStreak = progress?.loginStreak || 0;
+          
+          console.log(`📊 INFORMAÇÕES GERAIS:`);
+          console.log(`📅 Data atual: ${getCurrentDateString()}`);
+          console.log(`🔥 Login Streak (simulado): ${simulatedStreak}`);
+          console.log(`🔥 Login Streak (real no estado): ${realLoginStreak}`);
+          console.log(`🛡️ Escudos de proteção: ${shields}`);
+          console.log(`🎮 Modo simulação: ${isSimulating ? 'ATIVO' : 'INATIVO'}`);
+          console.log(`🎯 Próximo escudo em: ${7 - (simulatedStreak % 7)} dia(s)`);
+          
+          // Calcular multiplicadores
+          const cycleStreakBonus = Math.min((progress?.cycleStreak || 0) * 0.1, 0.4);
+          const loginStreakBonus = Math.min(Math.floor(simulatedStreak / 3) * 0.05, 0.25);
+          
+          console.log(`📈 MULTIPLICADORES:`);
+          console.log(`🎯 Cycle Streak Bonus: +${Math.round(cycleStreakBonus * 100)}% XP`);
+          console.log(`🔥 Login Streak Bonus: +${Math.round(loginStreakBonus * 100)}% XP`);
+          
+          console.log('🎮 ===== FIM STATUS =====');
+          
+          return {
+            date: getCurrentDateString(),
+            streak: simulatedStreak,
+            realStreak: realLoginStreak,
+            shields: shields,
+            simulating: isSimulating,
+            nextShieldIn: 7 - (simulatedStreak % 7),
+            cycleStreakBonus: Math.round(cycleStreakBonus * 100),
+            loginStreakBonus: Math.round(loginStreakBonus * 100)
+          };
+        },
+        
+        reload: () => {
+          console.log('🔄 ===== RECARREGANDO PÁGINA =====');
+          window.location.reload();
+        },
+        
+        help: () => {
+          console.log(`
+🎮 ===== COMANDOS DE SIMULAÇÃO TEMPORAL (VERSÃO LIMPA) =====
+
+COMANDOS BÁSICOS (Agora controlados pelo React):
+testSimulation.advanceDay()     - Avança 1 dia (React gerencia estado)
+testSimulation.goBackDay()      - Volta 1 dia (React gerencia estado)  
+testSimulation.skipDay()        - Pula 1 dia (React gerencia escudos/penalidades)
+testSimulation.reset()          - Volta para data real (React gerencia)
+testSimulation.addShields(N)    - Adiciona N escudos (React gerencia)
+
+COMANDOS DE CONSULTA (Somente leitura):
+testSimulation.status()         - Mostra status completo
+testSimulation.help()           - Mostra esta ajuda
+testSimulation.reload()         - Recarrega página manualmente
+
+MELHORIAS DA VERSÃO LIMPA:
+✅ React controla 100% do estado
+✅ Sem conflitos localStorage vs React
+✅ Sem recarregamentos automáticos
+✅ Estado sempre consistente
+✅ Sem "guerra" entre sistemas
+
+SISTEMA DE ESCUDOS (Gerenciado pelo React):
+🛡️ Ganha escudo a cada 7 dias de streak
+🛡️ Escudo protege contra penalidade de skip
+🛡️ Skip sem escudo = -3 streak
+🛡️ Skip com escudo = streak protegida + consome 1 escudo
+
+🎮 ===== VERSÃO LIMPA ATIVA! =====
+          `);
+        }
+      };
+
+      console.log('✅ testSimulation LIMPO definido globalmente!');
+      console.log('🎯 Digite no console: testSimulation.help()');
+      console.log('📊 Digite no console: testSimulation.status()');
+      console.log('🚀 ===== SISTEMA LIMPO PRONTO! =====');
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

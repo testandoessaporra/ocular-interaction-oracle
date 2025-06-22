@@ -1,0 +1,268 @@
+
+@layer utilities {
+  /* Button Animation */
+  .button-press {
+    animation: buttonPress 0.2s ease-out;
+  }
+
+  /* Gaming Animation Classes */
+  .streak-glow-active {
+    animation: streakGlow 1.5s ease-in-out;
+  }
+
+  .streak-pulse-active {
+    animation: streakPulse 1s ease-in-out;
+  }
+
+  .level-up-glow {
+    animation: levelUpGlow 2s ease-in-out infinite;
+  }
+
+  .medal-pulse-active {
+    animation: medalPulse 1s ease-in-out 3;
+  }
+
+  /* Performance Tracking Indicators */
+  .performance-warning {
+    animation: performanceWarning 2s ease-in-out infinite;
+  }
+
+  .performance-critical {
+    animation: performanceCritical 1s ease-in-out infinite;
+  }
+
+  /* Development Mode Indicators */
+  .dev-mode-active {
+    animation: devModeGlow 3s ease-in-out infinite;
+  }
+
+  /* Momentum System Animations */
+  .momentum-level-1 {
+    animation: momentumLevel1 2s ease-in-out infinite;
+  }
+
+  .momentum-level-2 {
+    animation: momentumLevel2 1.8s ease-in-out infinite;
+  }
+
+  .momentum-level-3 {
+    animation: momentumLevel3 1.5s ease-in-out infinite;
+  }
+
+  .momentum-level-4 {
+    animation: momentumLevel4 1.2s ease-in-out infinite;
+  }
+
+  .momentum-level-5 {
+    animation: momentumLevel5 1s ease-in-out infinite, momentumPulse 0.5s ease-in-out infinite alternate;
+  }
+
+  /* Keyframes */
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes floatingXP {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-25px) scale(1.1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px) scale(0.8);
+    }
+  }
+
+  @keyframes confettiFall {
+    0% {
+      transform: translateY(-10px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes xpParticles {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-16px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-32px) scale(0.3);
+    }
+  }
+
+  @keyframes streakGlow {
+    0%, 100% {
+      text-shadow: 0 0 4px currentColor;
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 0 0 16px currentColor, 0 0 24px currentColor, 0 0 32px currentColor;
+      transform: scale(1.03);
+    }
+  }
+
+  @keyframes streakPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes sparkleOut {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--end-x), var(--end-y)) scale(0.3);
+    }
+  }
+
+  @keyframes levelUpGlow {
+    0%, 100% {
+      box-shadow: 0 0 4px rgba(251, 191, 36, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 16px rgba(251, 191, 36, 1), 0 0 24px rgba(251, 191, 36, 0.8);
+    }
+  }
+
+  @keyframes medalPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
+
+  /* Momentum Animations */
+  @keyframes momentumLevel1 {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
+    }
+  }
+
+  @keyframes momentumLevel2 {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+      border-color: rgba(251, 191, 36, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 16px rgba(251, 191, 36, 0.8);
+      border-color: rgba(251, 191, 36, 0.8);
+    }
+  }
+
+  @keyframes momentumLevel3 {
+    0%, 100% {
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.6), 0 0 8px rgba(245, 158, 11, 0.4);
+      border-color: rgba(251, 191, 36, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(251, 191, 36, 0.9), 0 0 16px rgba(245, 158, 11, 0.7);
+      border-color: rgba(251, 191, 36, 0.9);
+    }
+  }
+
+  @keyframes momentumLevel4 {
+    0%, 100% {
+      box-shadow: 
+        0 0 15px rgba(251, 191, 36, 0.8), 
+        0 0 10px rgba(245, 158, 11, 0.6),
+        0 0 5px rgba(239, 68, 68, 0.3);
+      border-color: rgba(251, 191, 36, 0.8);
+    }
+    50% {
+      box-shadow: 
+        0 0 25px rgba(251, 191, 36, 1), 
+        0 0 20px rgba(245, 158, 11, 0.9),
+        0 0 15px rgba(239, 68, 68, 0.6);
+      border-color: rgba(251, 191, 36, 1);
+    }
+  }
+
+  @keyframes momentumLevel5 {
+    0%, 100% {
+      box-shadow: 
+        0 0 20px rgba(251, 191, 36, 1), 
+        0 0 15px rgba(245, 158, 11, 0.8),
+        0 0 10px rgba(239, 68, 68, 0.6),
+        0 0 5px rgba(168, 85, 247, 0.4);
+      border-color: rgba(251, 191, 36, 1);
+    }
+    50% {
+      box-shadow: 
+        0 0 35px rgba(251, 191, 36, 1), 
+        0 0 30px rgba(245, 158, 11, 1),
+        0 0 25px rgba(239, 68, 68, 0.8),
+        0 0 20px rgba(168, 85, 247, 0.7);
+      border-color: rgba(239, 68, 68, 0.8);
+    }
+  }
+
+  @keyframes momentumPulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.02);
+    }
+  }
+
+  /* Performance Animations */
+  @keyframes performanceWarning {
+    0%, 100% {
+      border-color: rgba(251, 191, 36, 0.5);
+    }
+    50% {
+      border-color: rgba(251, 191, 36, 1);
+    }
+  }
+
+  @keyframes performanceCritical {
+    0%, 100% {
+      border-color: rgba(239, 68, 68, 0.5);
+      background-color: rgba(239, 68, 68, 0.1);
+    }
+    50% {
+      border-color: rgba(239, 68, 68, 1);
+      background-color: rgba(239, 68, 68, 0.2);
+    }
+  }
+
+  @keyframes devModeGlow {
+    0%, 100% {
+      box-shadow: 0 0 4px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+  }
+}

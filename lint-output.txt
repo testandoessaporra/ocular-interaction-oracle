@@ -1,0 +1,216 @@
+
+> vite_react_shadcn_ts@0.0.0 lint
+> eslint .
+
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/EditOperationButton.tsx
+  36:54  error  Expected a `const` instead of a literal type assertion  @typescript-eslint/prefer-as-const
+  38:18  error  Expected a `const` instead of a literal type assertion  @typescript-eslint/prefer-as-const
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/GlobalTimer.tsx
+  7:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ParticleEffect-optimized.tsx
+  41:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/PerformanceDiagnostic.tsx
+  31:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/StudyBlocksPreview.tsx
+  26:39  error  React Hook "useBlockValidation" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?      react-hooks/rules-of-hooks
+  29:53  error  React Hook "useProgressCalculation" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?  react-hooks/rules-of-hooks
+  39:7   error  React Hook "useDragAndDrop" is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?          react-hooks/rules-of-hooks
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/SubjectConfiguration.tsx
+  17:70  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/layout/AppContent.tsx
+  38:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  39:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  49:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/layout/PageTransitions.tsx
+  5:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/lazy/LazyDashboardCharts.tsx
+  41:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  47:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/lazy/LazyFramerMotion.tsx
+  11:7  warning  Fast refresh only works when a file only exports components. Move your component(s) to a separate file  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/optimized/OptimizedNavLink.tsx
+  10:37  error  Unexpected any. Specify a different type                                                                                        @typescript-eslint/no-explicit-any
+  27:7   error  React Hook "usePrefetch" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/preview/StudyBlockCardContent.tsx
+  33:7  error  Visible, non-interactive elements with click handlers must have at least one keyboard listener                                                                                                     jsx-a11y/click-events-have-key-events
+  33:7  error  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/preview/StudyBlocksGrid-optimized.tsx
+  117:9  error  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions
+  177:9  error  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/preview/StudyBlocksGrid.tsx
+  130:9  error  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions
+  182:9  error  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/timer/StudyTimer.tsx
+  12:114  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  16:17   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/alert.tsx
+  39:3  error  Headings must have content and the content must be accessible by a screen reader  jsx-a11y/heading-has-content
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/badge.tsx
+  36:17  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/button.tsx
+  53:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/card.tsx
+  36:3  error  Headings must have content and the content must be accessible by a screen reader  jsx-a11y/heading-has-content
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/command.tsx
+  26:11  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/form.tsx
+  168:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/navigation-menu.tsx
+  121:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/pagination.tsx
+  50:3  error  Anchors must have content and the content must be accessible by a screen reader  jsx-a11y/anchor-has-content
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/sidebar.tsx
+  761:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/tactical-notification.tsx
+  175:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  177:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/textarea.tsx
+  5:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/ui/toggle.tsx
+  43:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/wizard-steps/ExamSelectionStep.tsx
+  10:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/wizard-steps/study-configuration/DurationRangeSelector.tsx
+  130:10  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/wizard-steps/subject-configuration/CollapsibleWeightSlider.tsx
+  20:11  error  A form label must be associated with a control  jsx-a11y/label-has-associated-control
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/wizard-steps/subject-configuration/DifficultySlider.tsx
+  23:9  error  A form label must be associated with a control  jsx-a11y/label-has-associated-control
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/wizard-steps/subject-configuration/WeightSlider.tsx
+  13:9  error  A form label must be associated with a control  jsx-a11y/label-has-associated-control
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/wizard-steps/subject-selection/AddCustomSubjectCard.tsx
+  50:15  warning  The autoFocus prop should not be used, as it can reduce usability and accessibility for users  jsx-a11y/no-autofocus
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/components/wizard-steps/subject-selection/SubjectCard.tsx
+  55:9  error  Visible, non-interactive elements with click handlers must have at least one keyboard listener                                                                                                     jsx-a11y/click-events-have-key-events
+  55:9  error  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element  jsx-a11y/no-static-element-interactions
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/constants/syllabusData.ts
+  1127:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  1137:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/contexts/UserContext.tsx
+  90:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useDebugRenders.ts
+  7:79  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  9:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useGamification.tsx
+   44:69  error    Unexpected any. Specify a different type                                                                                   @typescript-eslint/no-explicit-any
+  156:6   warning  React Hook useCallback has a missing dependency: 'createConfettiEffect'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useGamificationLogic.ts
+  57:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useGlobalTimer.ts
+   7:10  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  16:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useLoginStreak.ts
+  37:6  warning  React Hook useCallback has unnecessary dependencies: 'userProgress.lastLoginDate', 'userProgress.loginStreak', and 'userProgress.streakProtectionShields'. Either exclude them or remove the dependency array  react-hooks/exhaustive-deps
+  45:6  warning  React Hook useEffect has a missing dependency: 'checkDailyLogin'. Either include it or remove the dependency array                                                                                             react-hooks/exhaustive-deps
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/usePerformanceTracker.ts
+  54:67  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useSimulationController.ts
+  7:13  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useStreakEffects.ts
+  19:5  error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  35:5  error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useStudyTimer.ts
+  17:17   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  23:152  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useTimerSounds.ts
+  9:67  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useUnifiedState.ts
+   82:13  error  'newUserProgress' is never reassigned. Use 'const' instead  prefer-const
+  145:13  error  Unexpected lexical declaration in case block                no-case-declarations
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/hooks/useUserSelector.ts
+  8:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/pages/DataPage.tsx
+  55:11  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/test/gamification/visualEffects.test.tsx
+  66:61  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/test/shared/testUtils.ts
+   71:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  195:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/types/dev.ts
+  39:10  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/utils/assetAnalyzer.ts
+  295:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  296:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/utils/cycleOptimization.ts
+  15:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/utils/cycleRebalancing.ts
+  4:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/utils/devAnalyzer.ts
+   23:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   24:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   98:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  116:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  120:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  391:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/utils/performance/fpsTracker.ts
+  47:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/src/utils/performance/webVitalsTracker.ts
+  32:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  64:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/mnt/c/Users/Paulo Benites/Music/so-ciclo-main/tailwind.config.ts
+  134:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+✖ 90 problems (76 errors, 14 warnings)
+  3 errors and 0 warnings potentially fixable with the `--fix` option.
+

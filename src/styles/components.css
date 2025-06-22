@@ -1,0 +1,126 @@
+
+/* Sidebar Styling */
+.tactical-sidebar {
+  background-color: #0a0a0a !important;
+  border-right: 1px solid rgba(82, 82, 91, 0.3);
+  /* Aumentar largura ligeiramente */
+  width: 280px;
+  /* NOVIDADE: Animação fluida GPU-acelerada */
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  transform: translateZ(0); /* Force GPU layer */
+}
+
+/* NOVIDADE: Estados da sidebar para animação suave */
+.tactical-sidebar[data-state="expanded"] {
+  transform: translateX(0);
+}
+
+.tactical-sidebar[data-state="collapsed"] {
+  transform: translateX(-100%);
+}
+
+.sidebar-brand {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+/* Mission Card Styling */
+.mission-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: 0.5rem;
+  /* NOVIDADE: Sombra mais pronunciada */
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mission-card:hover {
+  transform: translateY(-3px) rotateY(3deg);
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.6),
+    0 6px 16px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(251, 191, 36, 0.2);
+}
+
+/* Subject Name Styling */
+.subject-name {
+  font-family: 'Orbitron', monospace;
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Avatar com borda luminosa sutil */
+.user-avatar {
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 
+    0 0 8px rgba(251, 191, 36, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Tipografia melhorada */
+.tactical-body {
+  line-height: 1.6;
+}
+
+.description-text {
+  line-height: 1.7;
+}
+
+/* Números tabulares para alinhamento consistente */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* NOVIDADE: Animações de micro-interação */
+.button-press {
+  animation: buttonPress 0.2s ease-out;
+}
+
+@keyframes buttonPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* NOVIDADE: Glow de sucesso */
+.success-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.success-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.success-glow:hover::after {
+  opacity: 1;
+}
+
+/* Animação cascata suave para entrada de cards */
+@keyframes cascadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cascade-enter {
+  animation: cascadeIn 0.4s ease-out forwards;
+}

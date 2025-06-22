@@ -1,0 +1,432 @@
+/* Tactical UI Classes */
+.tactical-card {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(55, 65, 81, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.tactical-title {
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tactical-subtitle {
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tactical-label {
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tactical-body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.tactical-command {
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tactical-element {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.tactical-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.tactical-text-glow {
+  text-shadow: 
+    0 0 5px rgba(251, 191, 36, 0.5),
+    0 0 10px rgba(251, 191, 36, 0.3),
+    0 0 15px rgba(251, 191, 36, 0.2);
+}
+
+.tactical-btn-primary {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.9) 0%, rgba(245, 158, 11, 0.8) 100%);
+  color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(251, 191, 36, 0.6);
+  box-shadow: 
+    0 4px 12px rgba(251, 191, 36, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.tactical-btn-primary:hover {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 1) 0%, rgba(245, 158, 11, 0.9) 100%);
+  box-shadow: 
+    0 6px 20px rgba(251, 191, 36, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.tactical-btn-primary:focus-visible {
+  outline: none;
+  ring: 2px solid rgba(251, 191, 36, 0.8);
+  ring-offset: 2px;
+  ring-offset-color: transparent;
+}
+
+.tactical-btn-secondary {
+  background: linear-gradient(135deg, rgba(75, 85, 99, 0.8) 0%, rgba(55, 65, 81, 0.9) 100%);
+  color: rgba(229, 231, 235, 0.9);
+  border: 1px solid rgba(107, 114, 128, 0.5);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.tactical-btn-secondary:hover {
+  background: linear-gradient(135deg, rgba(107, 114, 128, 0.8) 0%, rgba(75, 85, 99, 0.9) 100%);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.tactical-btn-secondary:focus-visible {
+  outline: none;
+  ring: 2px solid rgba(107, 114, 128, 0.8);
+  ring-offset: 2px;
+  ring-offset-color: transparent;
+}
+
+.tactical-input {
+  background: rgba(31, 41, 55, 0.6);
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  color: rgba(229, 231, 235, 0.95);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.tactical-input:focus {
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+/* HUD Elements */
+.tactical-hud {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.9) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.tactical-progress-bar {
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.8) 0%, rgba(245, 158, 11, 0.6) 100%);
+  box-shadow: 
+    0 2px 4px rgba(251, 191, 36, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* REFINAMENTO: Placeholder para barras vazias */
+.tactical-progress-empty {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(75, 85, 99, 0.2) 0px,
+    rgba(75, 85, 99, 0.2) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  height: 100%;
+  border-radius: inherit;
+}
+
+/* Border animations */
+.tactical-border-glow {
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9)) padding-box,
+              linear-gradient(135deg, rgba(251, 191, 36, 0.4), rgba(245, 158, 11, 0.2)) border-box;
+}
+
+.tactical-border-glow:hover {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(17, 24, 39, 0.95)) padding-box,
+              linear-gradient(135deg, rgba(251, 191, 36, 0.6), rgba(245, 158, 11, 0.4)) border-box;
+}
+
+/* Status indicators */
+.tactical-status-active {
+  background: linear-gradient(45deg, rgba(34, 197, 94, 0.2), rgba(22, 163, 74, 0.1));
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: rgba(74, 222, 128, 0.9);
+}
+
+.tactical-status-warning {
+  background: linear-gradient(45deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.1));
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  color: rgba(252, 211, 77, 0.9);
+}
+
+.tactical-status-danger {
+  background: linear-gradient(45deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.1));
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: rgba(248, 113, 113, 0.9);
+}
+
+/* REFINAMENTO: Badges uniformes */
+.tactical-badge {
+  @apply bg-gray-800/60 text-gray-200 border-gray-600/60;
+}
+
+.tactical-badge-success {
+  @apply bg-green-800/60 text-green-200 border-green-400/60;
+}
+
+.tactical-badge-warning {
+  @apply bg-yellow-800/60 text-yellow-200 border-yellow-400/60;
+}
+
+/* Padronização das bordas com tokens accent */
+.tactical-border-accent-blue {
+  border-color: rgba(45, 92, 211, 0.6);
+}
+
+.tactical-border-accent-green {
+  border-color: rgba(0, 156, 115, 0.6);
+}
+
+.tactical-border-accent-purple {
+  border-color: rgba(124, 58, 237, 0.6);
+}
+
+.tactical-border-accent-orange {
+  border-color: rgba(234, 88, 12, 0.6);
+}
+
+.tactical-border-accent-teal {
+  border-color: rgba(8, 145, 178, 0.6);
+}
+
+.tactical-border-accent-pink {
+  border-color: rgba(219, 39, 119, 0.6);
+}
+
+/* MOMENTUM SYSTEM - Gamified Progress Bars */
+.momentum-inactive {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(75, 85, 99, 0.2) 0px,
+    rgba(75, 85, 99, 0.2) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  border-radius: inherit;
+}
+
+.momentum-level-1 {
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.8) 0%, rgba(245, 158, 11, 0.6) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  border-radius: inherit;
+}
+
+.momentum-level-2 {
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.9) 0%, rgba(245, 158, 11, 0.7) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.6);
+  border-radius: inherit;
+}
+
+.momentum-level-3 {
+  background: linear-gradient(90deg, 
+    rgba(251, 191, 36, 1) 0%, 
+    rgba(245, 158, 11, 0.9) 50%, 
+    rgba(251, 191, 36, 1) 100%
+  );
+  border: 1px solid rgba(251, 191, 36, 0.8);
+  border-radius: inherit;
+}
+
+.momentum-level-4 {
+  background: linear-gradient(90deg, 
+    rgba(251, 191, 36, 1) 0%, 
+    rgba(245, 158, 11, 1) 25%,
+    rgba(239, 68, 68, 0.8) 50%,
+    rgba(245, 158, 11, 1) 75%,
+    rgba(251, 191, 36, 1) 100%
+  );
+  border: 1px solid rgba(251, 191, 36, 0.9);
+  border-radius: inherit;
+}
+
+.momentum-level-5 {
+  background: linear-gradient(90deg, 
+    rgba(251, 191, 36, 1) 0%, 
+    rgba(245, 158, 11, 1) 20%,
+    rgba(239, 68, 68, 1) 40%,
+    rgba(168, 85, 247, 0.9) 60%,
+    rgba(239, 68, 68, 1) 80%,
+    rgba(251, 191, 36, 1) 100%
+  );
+  border: 2px solid rgba(251, 191, 36, 1);
+  border-radius: inherit;
+}
+
+/* Momentum Text Styles */
+.momentum-text-inactive {
+  color: rgba(156, 163, 175, 0.8);
+}
+
+.momentum-text-1 {
+  color: rgba(251, 191, 36, 0.9);
+}
+
+.momentum-text-2 {
+  color: rgba(251, 191, 36, 1);
+  text-shadow: 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+.momentum-text-3 {
+  color: rgba(251, 191, 36, 1);
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+}
+
+.momentum-text-4 {
+  color: rgba(251, 191, 36, 1);
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.7), 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+.momentum-text-5 {
+  color: rgba(251, 191, 36, 1);
+  text-shadow: 
+    0 0 16px rgba(251, 191, 36, 1), 
+    0 0 12px rgba(245, 158, 11, 0.8),
+    0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+/* VISUAL REFINADO PARA BLOCOS COMPLETADOS - GRADIENTE VERDE MILITAR SOFISTICADO */
+.tactical-card-enhanced.tactical-gradient-card {
+  background: linear-gradient(135deg, 
+    rgba(27, 94, 32, 0.4) 0%,      /* Verde militar escuro */
+    rgba(46, 125, 50, 0.5) 25%,    /* Verde militar */
+    rgba(56, 142, 60, 0.4) 50%,    /* Verde militar médio */
+    rgba(46, 125, 50, 0.5) 75%,    /* Verde militar */
+    rgba(27, 94, 32, 0.4) 100%     /* Verde militar escuro */
+  ) !important;
+  
+  border: 1px solid rgba(46, 125, 50, 0.4) !important;
+  
+  /* Sombra sofisticada verde militar */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 1px 8px rgba(46, 125, 50, 0.2),
+    0 0 0 1px rgba(46, 125, 50, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 20px rgba(46, 125, 50, 0.1) !important;
+    
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover state sofisticado para blocos completados */
+.tactical-card-enhanced.tactical-gradient-card:hover {
+  background: linear-gradient(135deg, 
+    rgba(27, 94, 32, 0.5) 0%,
+    rgba(46, 125, 50, 0.6) 25%,
+    rgba(56, 142, 60, 0.5) 50%,
+    rgba(46, 125, 50, 0.6) 75%,
+    rgba(27, 94, 32, 0.5) 100%
+  ) !important;
+  
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 2px 12px rgba(46, 125, 50, 0.3),
+    0 0 0 1px rgba(46, 125, 50, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 30px rgba(46, 125, 50, 0.15) !important;
+}
+
+/* FUNDO PRETO ORIGINAL RESTAURADO - ELEGANTE E SOFISTICADO */
+.tactical-card-enhanced.tactical-gradient-dark {
+  background: linear-gradient(135deg, 
+    rgba(31, 41, 55, 0.95) 0%, 
+    rgba(17, 24, 39, 0.98) 50%,
+    rgba(31, 41, 55, 0.95) 100%
+  ) !important;
+  
+  /* Sombra elegante original */
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(55, 65, 81, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 20px rgba(0, 0, 0, 0.1) !important;
+    
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover sofisticado para blocos não completados */
+.tactical-card-enhanced.tactical-gradient-dark:hover {
+  background: linear-gradient(135deg, 
+    rgba(31, 41, 55, 0.98) 0%, 
+    rgba(17, 24, 39, 1) 50%,
+    rgba(31, 41, 55, 0.98) 100%
+  ) !important;
+  
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(55, 65, 81, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* FUNDO GERAL DO APP COM TEXTURA OPACA - AJUSTADO PARA NÃO INTERFERIR NO LAYOUT */
+.tactical-bg {
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 26, 0.95) 0%, 
+    rgba(0, 0, 0, 0.98) 50%,
+    rgba(26, 26, 26, 0.95) 100%
+  );
+  
+  /* Adicionar textura hexagonal sutil */
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  
+  /* Adicionar backdrop blur para sofisticação */
+  backdrop-filter: blur(2px);
+  
+  /* Fixar background sem interferir no layout */
+  background-attachment: fixed;
+  background-repeat: repeat;
+}
+
+/* Garantir que páginas específicas tenham altura mínima adequada */
+.tactical-bg.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .tactical-title {
+    font-size: 1.25rem;
+  }
+  
+  .tactical-command {
+    font-size: 0.875rem;
+  }
+}

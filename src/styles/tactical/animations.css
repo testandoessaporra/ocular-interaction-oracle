@@ -1,0 +1,29 @@
+
+/* ===== TACTICAL ANIMATIONS ===== */
+
+/* ANIMAÇÕES TÁTICAS */
+@keyframes tacticalPulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  70% { 
+    box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+  }
+}
+
+.tactical-pulse {
+  animation: tacticalPulse 2s infinite;
+}
+
+@keyframes tacticalGlow {
+  0%, 100% { 
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+  50% { 
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+}
+
+.tactical-text-glow-animated {
+  animation: tacticalGlow 2s ease-in-out infinite;
+}

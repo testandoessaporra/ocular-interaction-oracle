@@ -1,0 +1,178 @@
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide Up with Bounce - More Dynamic */
+@keyframes slideUpBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  80% {
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Fade In Scale - Smooth entrance */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Progress Bar Fill Animation */
+@keyframes progressFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Hover Scale */
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-slide-up-bounce {
+  animation: slideUpBounce 0.6s ease-out backwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.5s ease-out backwards;
+}
+
+/* Progress Bar Animation */
+.animate-progress-fill {
+  transform-origin: left;
+  animation: progressFill 1s ease-out forwards;
+}
+
+/* Stagger Animation System */
+.stagger-container > * {
+  animation: slideUpBounce 0.6s ease-out backwards;
+}
+
+/* Manual stagger delays for precise control */
+.stagger-item-1 { animation-delay: 50ms; }
+.stagger-item-2 { animation-delay: 100ms; }
+.stagger-item-3 { animation-delay: 150ms; }
+.stagger-item-4 { animation-delay: 200ms; }
+.stagger-item-5 { animation-delay: 250ms; }
+.stagger-item-6 { animation-delay: 300ms; }
+.stagger-item-7 { animation-delay: 350ms; }
+.stagger-item-8 { animation-delay: 400ms; }
+.stagger-item-9 { animation-delay: 450ms; }
+.stagger-item-10 { animation-delay: 500ms; }
+.stagger-item-11 { animation-delay: 550ms; }
+.stagger-item-12 { animation-delay: 600ms; }
+.stagger-item-13 { animation-delay: 650ms; }
+.stagger-item-14 { animation-delay: 700ms; }
+.stagger-item-15 { animation-delay: 750ms; }
+.stagger-item-16 { animation-delay: 800ms; }
+.stagger-item-17 { animation-delay: 850ms; }
+.stagger-item-18 { animation-delay: 900ms; }
+.stagger-item-19 { animation-delay: 950ms; }
+.stagger-item-20 { animation-delay: 1000ms; }
+
+/* Auto stagger using nth-child (more efficient for lists) */
+.stagger-auto > *:nth-child(1) { animation-delay: 50ms; }
+.stagger-auto > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-auto > *:nth-child(3) { animation-delay: 150ms; }
+.stagger-auto > *:nth-child(4) { animation-delay: 200ms; }
+.stagger-auto > *:nth-child(5) { animation-delay: 250ms; }
+.stagger-auto > *:nth-child(6) { animation-delay: 300ms; }
+.stagger-auto > *:nth-child(7) { animation-delay: 350ms; }
+.stagger-auto > *:nth-child(8) { animation-delay: 400ms; }
+.stagger-auto > *:nth-child(9) { animation-delay: 450ms; }
+.stagger-auto > *:nth-child(10) { animation-delay: 500ms; }
+
+/* Fast stagger for quick lists */
+.stagger-fast > * {
+  animation: fadeInScale 0.4s ease-out backwards;
+}
+.stagger-fast > *:nth-child(1) { animation-delay: 25ms; }
+.stagger-fast > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-fast > *:nth-child(3) { animation-delay: 75ms; }
+.stagger-fast > *:nth-child(4) { animation-delay: 100ms; }
+.stagger-fast > *:nth-child(5) { animation-delay: 125ms; }
+.stagger-fast > *:nth-child(6) { animation-delay: 150ms; }
+.stagger-fast > *:nth-child(7) { animation-delay: 175ms; }
+.stagger-fast > *:nth-child(8) { animation-delay: 200ms; }
+
+/* Performance optimization */
+.stagger-container > *,
+.stagger-auto > *,
+.stagger-fast > * {
+  will-change: transform, opacity;
+}
+
+/* Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+  }
+}

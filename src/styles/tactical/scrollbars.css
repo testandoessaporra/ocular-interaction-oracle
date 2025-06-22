@@ -1,0 +1,43 @@
+
+/* ===== TACTICAL SCROLLBARS ===== */
+
+/* SCROLLBAR GLOBAL TÁTICA */
+html, body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 215, 0, 0.6) rgba(26, 26, 26, 0.5);
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+  background: rgba(26, 26, 26, 0.5);
+}
+
+html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.6);
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.8);
+}
+
+/* SCROLLBAR TÁTICA PARA COMPONENTES */
+.tactical-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tactical-scrollbar::-webkit-scrollbar-track {
+  background: rgba(26, 26, 26, 0.5);
+}
+
+.tactical-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.3);
+  border-radius: 3px;
+}
+
+.tactical-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.5);
+}
