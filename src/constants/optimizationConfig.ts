@@ -42,7 +42,7 @@ export const OPTIMIZATION_CONFIG = {
   
   // Controle de Animações - MADE MUTABLE
   ANIMATIONS: {
-    ENABLE_FRAMER_MOTION: true, // Toggle para desabilitar Framer Motion
+    ENABLE_FRAMER_MOTION: false, // Toggle para desabilitar Framer Motion - DESABILITADO
     ENABLE_CSS_ANIMATIONS: true, // Toggle para animações CSS
     ENABLE_PARTICLES: true, // Toggle para efeitos de partículas
     REDUCE_MOTION: false, // Respeitar prefers-reduced-motion
